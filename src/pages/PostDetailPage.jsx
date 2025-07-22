@@ -25,7 +25,7 @@ function PostDetailPage() {
       // postId에는 URL에서 추출한 값이 들어감
       //실제 URL이 /detail/3이라면, postId는 "3"
 
-    const [post, setPost] = useState(null);
+    const [post, setPost] = useState([]);
 
       useEffect(() => {
     const fetchPost = async () => {
