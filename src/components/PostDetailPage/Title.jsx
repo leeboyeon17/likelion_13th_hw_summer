@@ -7,9 +7,12 @@
 import { styled } from "styled-components";
 
 //스타일 컴포넌트 정의
+const TitleStyle = styled.h1`
+  color: #181818;
+`
 const SubWrapper = styled.div`
   font-size: 1rem;
-  color: var(--text2);
+  color: #495057;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
@@ -43,7 +46,7 @@ function Title({postID, title, writer, date, heartcount}) {
     return (
             <>
             <div className="container">
-                <h1>{title}</h1>
+                <TitleStyle>{title}</TitleStyle>
                 <SubWrapper>
                     <Left><b>{writer}</b> · {date}</Left>
                     <Right>
@@ -53,7 +56,6 @@ function Title({postID, title, writer, date, heartcount}) {
                         </button>
                     </Right>
                 </SubWrapper>
-                <div className=""></div>
             </div>
             </>
     );

@@ -12,11 +12,14 @@ import Body from "../components/PostDetailPage/Body";
 import Tags from "../components/PostDetailPage/Tags";
 import FooterProfile from "../components/PostDetailPage/FooterProfile";
 import Comment from "../components/PostDetailPage/Comment";
+import SideBar from "../components/PostDetailPage/SideBar";
 
 const Wrapper = styled.div`
   * {
     max-width: 768px;
   }
+  margin: 0 auto;
+  position: relative;
 `;
 
 function PostDetailPage() {
@@ -48,7 +51,10 @@ function PostDetailPage() {
         <Header 
           writer={post.writerName}
         />
+      
         <Wrapper>
+        <SideBar 
+        heartcount={post.heartCount}/>
         <Title
           postID={post.id}
           key={post.id}
