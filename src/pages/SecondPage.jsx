@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   SecondWrapper,
   Ranking,
@@ -8,6 +8,7 @@ import {
   Caution,
 } from "../components/Second/Styled";
 import Title from "../components/common/Title";
+import axios from "axios";
 
 const SecondPage = () => {
   // State 작성 -------------------------------------------------------------
@@ -22,31 +23,58 @@ const SecondPage = () => {
 
   //컴포넌트가 마운트될 때 한 번 실행되도록 -------------------------------------------------------------
 
+  const { VITE_APP_API_KEY } = import.meta.env;
+
+  // state 생성
+  const [top3Dust, setTop3Dust] = useState([]);
+
+
+  //콘솔에만 찍히도록
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        `http://openAPI.seoul.go.kr:8088/${VITE_APP_API_KEY}/json/RealtimeCityAir/1/50/`
+      );
+      console.log(response);
+     const sortedData = response.data.RealtimeCityAir.row.sort(
+         (a, b) => b.PM10 - a.PM10
+       );
+       setTop3Dust(sortedData);
+       console.log("top3Dust:",top3Dust);
+
+    } catch (error) {
+      console.error("에러 내용:", error);
+    }
+  };
+
+
   useEffect(() => {
-    fetchData();
+    fetchData(); //처음 렌더링 될 때 한 번 데이터를 불러오기 위해 ‘fetchData()’ 함수 호출!
+                 //useEffect는 컴포넌트가 마운트될 때 한 번 실행됨
   }, []);
+  //fetchData를 정의해두지 않았을 경우 error 발생
 
   return (
     <>
       <Title title={"지금 서울에서 미세먼지 농도가 가장 높은 지역 TOP 3"} />
       <SecondWrapper>
-        {/* {데이터 저장할 state.length > 0 ? ( */}
+         {top3Dust.length > 0 ? (
         <>
           <RankingWrapper>
-            <Ranking>1위: {}</Ranking>
-            <Ranking>2위: {}</Ranking>
-            <Ranking>3위: {}</Ranking>
+            <Ranking>1위: {top3Dust[0].MSRSTE_NM}</Ranking>
+            <Ranking>2위: {top3Dust[1].MSRSTE_NM}</Ranking>
+            <Ranking>3위: {top3Dust[2].MSRSTE_NM}</Ranking>
           </RankingWrapper>
 
           <RankingDesWrapper>
             <RankingDes>
-              1위인 "{}"의 현재 미세먼지 농도는 "{}"
+              1위인 "{top3Dust[0].MSRSTE_NM}"의 현재 미세먼지 농도는 "{top3Dust[0].PM10}"
             </RankingDes>
             <RankingDes>
-              2위인 "{}"의 현재 미세먼지 농도는 "{}"
+              2위인 "{top3Dust[1].MSRSTE_NM}"의 현재 미세먼지 농도는 "{top3Dust[1].PM10}"
             </RankingDes>
             <RankingDes>
-              3위인 "{}"의 현재 미세먼지 농도는 "{}"
+              3위인 "{top3Dust[2].MSRSTE_NM}"의 현재 미세먼지 농도는 "{top3Dust[2].PM10}"
             </RankingDes>
           </RankingDesWrapper>
           <Caution>마스크 꼭 쓰고 댕기세요 ~!</Caution>

@@ -12,6 +12,7 @@ const NextStep = styled.div`
 `;
 
 const ThirdPage = () => {
+
   return (
     <>
       <Title title={" 멋사 NEWS"} />
