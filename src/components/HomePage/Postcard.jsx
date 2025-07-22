@@ -23,7 +23,7 @@ function Postcard({ postID, thumbnail, title, content, date, commentcount, profi
           <span>by <b>{writer}</b></span>
           </Link>
           <div className="postcard_likes">
-            <img src="src/assets/heart.png" alt="좋아요" width="10px" height="10px" /> {heartcount}
+            <img src="/public/heart.png" alt="좋아요" width="10px" height="10px" /> {heartcount}
           </div>
       </div>
     </div>

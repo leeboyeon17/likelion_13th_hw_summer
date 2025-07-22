@@ -9,7 +9,7 @@ import { Outlet } from "react-router-dom";
 
 //---------------------------------------------//
 
-//'Wrapper' 정의
+//'Wrapper' 스타일 정의
 const Wrapper = styled.div`
   //* {border: 1px solid black;}
 `;
@@ -19,7 +19,7 @@ const Layout = () => {
   return (
     <>
       <Wrapper>
-        <h3>헤헤 신나는 벨로그 만들기//</h3> { /*공통헤더*/ }
+        {/*<h3>공통헤더</h3>*/}
         <Outlet />
       </Wrapper>
     </>

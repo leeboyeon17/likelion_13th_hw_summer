@@ -1,3 +1,12 @@
+import { styled } from "styled-components";
+
+//스타일 컴포넌트 정의
+const Logo = styled.img`
+  width: 28px;
+  height: 28px;
+`
+
+//컴포넌트 함수 정의
 function Header({writer}) {
 
   console.log("작성자 확인:", writer);
@@ -7,12 +16,12 @@ function Header({writer}) {
       {<div className="Header_innerBlock">
         <div className="HeaderLogo_block">
             <a>
-              <img src="src/assets/logo.svg" alt="v" width="71" height="24"/> {writer}.log
+              <Logo img src="/public/v.png" alt="v" width="71" height="24"/> {writer}.log
             </a> {/* url 미정이어서 a 태그 내부 href 공란 */}
         </div>
         <div className="Header_right">
-            <a><img src="src/assets/bell.png" alt="알림" width="30" height="30"/></a>
-            <a><img src="src/assets/search.png" alt="탐색" width="24" height="24"/></a>
+            <a><img src="/public/bell.png" alt="알림" width="30" height="30"/></a>
+            <a><img src="/public/search.png" alt="탐색" width="24" height="24"/></a>
             <button>로그인</button>
         </div>
         </div>}
@@ -21,4 +30,5 @@ function Header({writer}) {
   );
 }
 
+//export
 export default Header;

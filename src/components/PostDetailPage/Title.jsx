@@ -2,7 +2,39 @@
 //2. 거기에 맞춰 API 요청을 보낸 다음
 //3. 데이터를 Title 컴포넌트에 props로 넘겨줘야 함
 
+//------------------------------------------------------------------//
 
+import { styled } from "styled-components";
+
+//스타일 컴포넌트 정의
+const SubWrapper = styled.div`
+  font-size: 1rem;
+  color: var(--text2);
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+`
+const Left = styled.div`
+  display: flex;
+`
+const Right = styled.div`
+  font-size: 1rem;
+  color: var(--text2);
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+`
+const Heart = styled.img`
+  width: 18px;
+  height: 18px;
+  margin-right: 20px;
+`
+
+//컴포넌트 함수 정의
 function Title({postID, title, writer, date, heartcount}) {
 
     console.log("제목 확인:", title);
@@ -12,20 +44,20 @@ function Title({postID, title, writer, date, heartcount}) {
             <>
             <div className="container">
                 <h1>{title}</h1>
-                <div className="titleInfo">
-                    <div><b>{writer}</b> · {date}</div>
-                    <div>
+                <SubWrapper>
+                    <Left><b>{writer}</b> · {date}</Left>
+                    <Right>
                         <button className="follow-btn">팔로우</button>
                         <button className="like-btn">
-                            <img src="src/assets/heart.png" alt="좋아요" width="10px" height="10px" /> {heartcount}
+                            <Heart src="/public/heart.png" alt="좋아요"/> {heartcount}
                         </button>
-                    </div>
-                </div>
+                    </Right>
+                </SubWrapper>
                 <div className=""></div>
             </div>
             </>
     );
 }
 
-
+//export
 export default Title;

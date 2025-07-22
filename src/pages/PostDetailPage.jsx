@@ -1,10 +1,11 @@
 import React from "react";
-import { styled } from "styled-components";
 import { Link } from "react-router-dom";
 
+import { styled } from "styled-components";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios"; // axios 설정한 파일
+import axios from "axios"; // axios 설정한 파일 필요시 import
+
 import Header from "../components/PostDetailPage/Header";
 import Title from "../components/PostDetailPage/Title";
 import Body from "../components/PostDetailPage/Body";
@@ -15,8 +16,6 @@ import Comment from "../components/PostDetailPage/Comment";
 const Wrapper = styled.div`
   * {
     max-width: 768px;
-    margin-left: auto;
-    margin-right: auto;
   }
 `;
 
@@ -26,7 +25,6 @@ function PostDetailPage() {
       // postId에는 URL에서 추출한 값이 들어감
       //실제 URL이 /detail/3이라면, postId는 "3"
 
-    //const { id } = useParams(); // URL에서 postID 추출
     const [post, setPost] = useState(null);
 
       useEffect(() => {
