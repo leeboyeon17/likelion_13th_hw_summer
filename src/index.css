@@ -50,13 +50,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  color: gray;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
 .container {
   width: 1376px;
@@ -64,7 +57,7 @@ button:focus-visible {
   padding: 20px 0;
   /*media query==>
   max-width: 1376px; width: 100%;
-  ??*/
+  */
 }
 
 /****** Header ******/

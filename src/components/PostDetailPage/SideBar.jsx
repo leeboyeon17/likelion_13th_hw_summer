@@ -19,8 +19,7 @@ const SideWrapper = styled.div`
 const IconContainer = styled.div`
     height: 3rem;
     width: 3rem;
-    display: flex
-;
+    display: flex;
     -webkit-box-align: center;
     align-items: center;
     -webkit-box-pack: center;
@@ -31,6 +30,10 @@ const IconContainer = styled.div`
     color: #868E96;
     cursor: pointer;
     z-index: 5;
+
+    &:hover {
+    outline: 4px auto ;
+}
 `
 const Img = styled.img`
     height: 24px;
