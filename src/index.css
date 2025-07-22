@@ -59,10 +59,12 @@ button:focus-visible {
 }
 
 .container {
-  max-width: 1376px;
-  width: 100%;
+  width: 1376px;
   margin: 0 auto;
   padding: 20px 0;
+  /*media query==>
+  max-width: 1376px; width: 100%;
+  ??*/
 }
 
 /****** Header ******/
@@ -218,7 +220,7 @@ nav div {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.postcard_image {
+.postcard_thumbnail {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -251,6 +253,7 @@ nav div {
   overflow-x: hidden;
   overflow-y: hidden;
   cursor: pointer;
+  margin: 0;
 }
 
 .postcard_subInfo {
@@ -271,6 +274,18 @@ nav div {
 }
 .postcard_userInfo {
   cursor: pointer;
+  font-size: 12px;
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+.profile_Img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  margin-right: 0.5rem;
 }
 
 @media (prefers-color-scheme: light) {
@@ -284,4 +299,211 @@ nav div {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/**************************상세페이지*******************************/
+
+.titleInfo {
+  font-size: 1rem;
+  color: var(--text2);
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.titleInfo div {
+  display: flex;
+}
+.titleInfo :nth-child(2) {
+  font-size: 1rem;
+  color: var(--text2);
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.like-btn {
+  background: var(--bg-element1);
+  border: 1px solid var(--border2);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 1.5rem;
+  border-radius: 0.75rem;
+  outline: none;
+
+  /**/
+  font-size: 14px;
+  display: flex;
+  box-shadow: none;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: var(--bg-element1);
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 700;
+  width: 96px;
+  height: 32px;
+  white-space: nowrap;
+  margin-left: 1rem;
+}
+
+.tag_container {
+  display: flex;
+  margin-top: 0.875rem;
+  margin-bottom: 0.875rem;
+  min-height: 0.875rem;
+}
+.tag_container div {
+  background: #f8f9fa;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2rem;
+  border-radius: 1rem;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-right: 0.875rem;
+  color: green;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.tag_container div:hover {
+  opacity: 0.7;
+}
+
+.body_container {
+  padding: 2.5rem 1rem 0 1rem;
+}
+.body_container p {
+  font-size: 1.125rem;
+  color: var(--text1);
+  transition: color 0.125s ease-in;
+  line-height: 1.7;
+  letter-spacing: -0.004em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.footerprofile_container {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
+}
+.footerprofile_container img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 4px 0px;
+}
+.footerprofile_container div {
+  display: flex;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#name {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: var(--text1);
+}
+
+.follow-btn {
+  color: #12b886;
+  border: 1px solid #12b886; /*왜 안바뀜? button 기본 색상 확인하기*/
+  font-size: 14px;
+  display: flex;
+  box-shadow: none;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: var(--bg-element1);
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 700;
+  width: 96px;
+  height: 32px;
+
+  white-space: nowrap;
+  outline: none;
+  font-size: 16px;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.comment_container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  color: var(--text1);
+}
+.comment_container h4 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+textarea {
+  resize: none;
+  padding: 1rem 1rem 1.5rem;
+  outline: none;
+  border: 1px solid var(--border4);
+  margin-bottom: 1.5rem;
+  width: 100%;
+  border-radius: 4px;
+  min-height: 6.125rem;
+  font-size: 1rem;
+  color: var(--text1);
+  line-height: 1.75;
+  background: var(--bg-element1);
+  box-sizing: border-box;
+}
+
+.button-wrapper {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
+
+.comment-btn {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: #12b886;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 0px 1.25rem;
+  height: 2rem;
+  font-size: 1rem;
 }
