@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
-  color: var(--text1);
+  color: #212529;
 `
 const Count = styled.h4`
   font-size: 1.125rem;
@@ -23,9 +23,9 @@ const Textarea = styled.textarea`
   border-radius: 4px;
   min-height: 6.125rem;
   font-size: 1rem;
-  color: var(--text1);
+  color: #212529;
   line-height: 1.75;
-  background: var(--bg-element1);
+  background: #FFFFFF;
   box-sizing: border-box;
 `
 

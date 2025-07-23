@@ -24,17 +24,31 @@ const Left = styled.div`
 `
 const Right = styled.div`
   font-size: 1rem;
-  color: var(--text2);
+  color: #495057;
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
   -webkit-box-align: center;
   align-items: center;
 `
+const LikeBtn = styled.button`
+  background: #FFFFFF;
+  color: #808080;
+    border: 1px solid #ADB5BD;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 1.5rem;
+   border-radius: 30px;
+  font-weight: 700;
+  width: 96px;
+  height: 32px;
+`
 const Heart = styled.img`
   width: 18px;
   height: 18px;
-  margin-right: 20px;
+  margin-right: 20px; 
 `
 
 //컴포넌트 함수 정의
@@ -51,9 +65,9 @@ function Title({postID, title, writer, date, heartcount}) {
                     <Left><b>{writer}</b> · {date}</Left>
                     <Right>
                         <button className="follow-btn">팔로우</button>
-                        <button className="like-btn">
-                            <Heart src="/public/heart.png" alt="좋아요"/> {heartcount}
-                        </button>
+                        <LikeBtn className="like-btn">
+                            <Heart src="/public/heart.png" alt="좋아요"/>{heartcount}
+                        </LikeBtn>
                     </Right>
                 </SubWrapper>
             </div>

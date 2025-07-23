@@ -60,7 +60,7 @@ button {
   */
 }
 
-/****** Header ******/
+/****** Header ******/ /*HomePage 수정 후 지우기*/
 
 .Header_innerBlock {
   display: flex;
@@ -334,7 +334,7 @@ nav div {
   align-items: center;
   -webkit-box-pack: center;
   justify-content: center;
-  background-color: var(--bg-element1);
+  background-color: #FFFFFF;
   cursor: pointer;
   border-radius: 30px;
   font-weight: 700;
@@ -372,3 +372,10 @@ nav div {
   height: 2rem;
   font-size: 1rem;
 }
+
+@font-face {
+  font-family: 'Fira Mono';
+  src: url('/public/fonts/FiraMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
